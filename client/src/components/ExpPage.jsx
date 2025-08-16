@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { VERDICTS } from "../constants/verdictsMap"
 import "./ExpPage.css";
 
 const DropdownSection = ({ title, children }) => {
@@ -145,13 +144,6 @@ const ExpPage = () => {
                 <span className="label">Eligible Branches:</span>{" "}
                 {exp.eligibleBranches.join(", ")}
               </p>
-              {exp.verdict !== undefined && exp.verdict !== null && exp.verdict !== "" && (
-                <p>
-                  <span className="label">Verdict: </span>
-                  {VERDICTS.find(v => v.value === exp.verdict)?.label}
-                </p>
-              )}
-
               {expUser.linkedIn === "" || expUser.linkedIn === undefined ? (
                 ""
               ) : (
